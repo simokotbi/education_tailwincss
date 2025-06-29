@@ -323,7 +323,7 @@
                         </p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-gray-500">Principal Investigator: Dr. Sarah Chen</span>
-                            <a href="#" class="text-blue-600 hover:text-blue-700 font-medium">Learn More →</a>
+                            <button onclick="openProjectModal('quantum')" class="text-blue-600 hover:text-blue-700 font-medium transition duration-300">Learn More →</button>
                         </div>
                     </div>
                 </article>
@@ -339,7 +339,7 @@
                         </p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-gray-500">Principal Investigator: Dr. Michael Rodriguez</span>
-                            <a href="#" class="text-emerald-600 hover:text-emerald-700 font-medium">Learn More →</a>
+                            <button onclick="openProjectModal('crispr')" class="text-emerald-600 hover:text-emerald-700 font-medium transition duration-300">Learn More →</button>
                         </div>
                     </div>
                 </article>
@@ -355,7 +355,7 @@
                         </p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-gray-500">Principal Investigator: Dr. Aisha Patel</span>
-                            <a href="#" class="text-purple-600 hover:text-purple-700 font-medium">Learn More →</a>
+                            <button onclick="openProjectModal('ai')" class="text-purple-600 hover:text-purple-700 font-medium transition duration-300">Learn More →</button>
                         </div>
                     </div>
                 </article>
@@ -371,7 +371,7 @@
                         </p>
                         <div class="flex items-center justify-between">
                             <span class="text-sm text-gray-500">Principal Investigator: Dr. James Liu</span>
-                            <a href="#" class="text-orange-600 hover:text-orange-700 font-medium">Learn More →</a>
+                            <button onclick="openProjectModal('solar')" class="text-orange-600 hover:text-orange-700 font-medium transition duration-300">Learn More →</button>
                         </div>
                     </div>
                 </article>
@@ -483,6 +483,25 @@
         </div>
     </footer>
 
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-200 flex items-center justify-between">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-900"></h3>
+                <button onclick="closeProjectModal()" class="text-gray-400 hover:text-gray-600 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="p-6">
+                <div id="modal-content" class="space-y-6">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Initialize AOS
         AOS.init({
@@ -497,6 +516,177 @@
 
         mobileMenuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Project data
+        const projectData = {
+            quantum: {
+                title: "Quantum Error Correction at Scale",
+                category: "QUANTUM COMPUTING",
+                pi: "Dr. Sarah Chen",
+                description: "Our quantum computing research team is pioneering breakthrough error correction protocols that promise to make practical quantum computing a reality. This groundbreaking project addresses one of the most significant challenges in quantum computing: maintaining quantum coherence at scale.",
+                objectives: [
+                    "Develop novel quantum error correction codes with improved efficiency",
+                    "Design scalable quantum error correction architectures",
+                    "Demonstrate error correction on 100+ qubit systems",
+                    "Create practical protocols for fault-tolerant quantum computing"
+                ],
+                achievements: [
+                    "Published 15 papers in top-tier journals",
+                    "Filed 8 patents for quantum error correction methods",
+                    "Secured $5M in NSF funding",
+                    "Collaborated with IBM and Google quantum teams"
+                ],
+                impact: "This research could enable quantum computers to solve previously intractable problems in drug discovery, financial modeling, cryptography, and artificial intelligence, potentially revolutionizing multiple industries.",
+                team: "12 PhD students, 4 postdocs, 3 faculty members",
+                duration: "2022-2027",
+                funding: "$5.2M from NSF, DOE, and industry partners"
+            },
+            crispr: {
+                title: "CRISPR 3.0: Next-Generation Gene Editing",
+                category: "BIOTECHNOLOGY",
+                pi: "Dr. Michael Rodriguez",
+                description: "Our biotechnology team is developing the next generation of CRISPR gene editing tools with unprecedented precision and safety. This revolutionary project aims to eliminate off-target effects while expanding the range of genetic modifications possible.",
+                objectives: [
+                    "Engineer ultra-precise CRISPR variants with zero off-target effects",
+                    "Develop new base editing and prime editing systems",
+                    "Create programmable epigenome editors",
+                    "Establish safety protocols for therapeutic applications"
+                ],
+                achievements: [
+                    "Developed 3 new CRISPR variants with 99.9% precision",
+                    "Completed successful trials in 15 disease models",
+                    "Licensed technology to 2 biotech companies",
+                    "Training the next generation of gene therapy researchers"
+                ],
+                impact: "These advances could enable treatments for previously incurable genetic diseases, enhance crop resilience for global food security, and provide new tools for basic biological research.",
+                team: "18 researchers across multiple disciplines",
+                duration: "2021-2026",
+                funding: "$12M from NIH, Gates Foundation, and biotech partnerships"
+            },
+            ai: {
+                title: "Explainable AI for Healthcare",
+                category: "ARTIFICIAL INTELLIGENCE",
+                pi: "Dr. Aisha Patel",
+                description: "Our AI research focuses on creating transparent and interpretable artificial intelligence systems specifically designed for critical healthcare applications. This vital research addresses the 'black box' problem in medical AI, ensuring that AI decisions can be understood and trusted by healthcare professionals.",
+                objectives: [
+                    "Develop interpretable deep learning architectures for medical diagnosis",
+                    "Create visualization tools for AI decision explanation",
+                    "Establish trust metrics for healthcare AI systems",
+                    "Build regulatory-compliant AI frameworks"
+                ],
+                achievements: [
+                    "Deployed AI systems in 5 major hospitals",
+                    "Achieved 95% diagnostic accuracy with full explainability",
+                    "Published breakthrough paper in Nature Medicine",
+                    "Received FDA breakthrough device designation"
+                ],
+                impact: "This research will enable widespread adoption of AI in healthcare by ensuring that medical professionals can understand and trust AI recommendations, potentially saving millions of lives through improved diagnostics and treatment.",
+                team: "20 interdisciplinary researchers including AI scientists, physicians, and ethicists",
+                duration: "2020-2025",
+                funding: "$8M from NIH, NSF, and healthcare industry partners"
+            },
+            solar: {
+                title: "Next-Generation Solar Cells",
+                category: "SUSTAINABLE ENERGY",
+                pi: "Dr. James Liu",
+                description: "Our sustainable energy research team is developing revolutionary perovskite-silicon tandem solar cells that promise to achieve unprecedented efficiency levels while remaining cost-effective for global deployment. This breakthrough technology could accelerate the transition to renewable energy worldwide.",
+                objectives: [
+                    "Achieve 40%+ solar cell efficiency in laboratory conditions",
+                    "Develop scalable manufacturing processes",
+                    "Ensure 25-year operational stability",
+                    "Reduce cost per watt below $0.20"
+                ],
+                achievements: [
+                    "Demonstrated 38.5% efficiency in prototype cells",
+                    "Established pilot manufacturing line",
+                    "Secured partnerships with 3 major solar manufacturers",
+                    "Reduced manufacturing costs by 40%"
+                ],
+                impact: "These high-efficiency, low-cost solar cells could significantly accelerate global adoption of solar energy, contributing to climate change mitigation and energy independence for developing nations.",
+                team: "15 materials scientists, engineers, and economists",
+                duration: "2023-2028",
+                funding: "$10M from DOE, private investors, and international climate funds"
+            }
+        };
+
+        // Modal functions
+        function openProjectModal(projectId) {
+            const project = projectData[projectId];
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+
+            title.textContent = project.title;
+            
+            content.innerHTML = `
+                <div class="text-sm font-semibold text-blue-600 mb-2">${project.category}</div>
+                <div class="text-sm text-gray-600 mb-4">Principal Investigator: ${project.pi}</div>
+                
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Project Overview</h4>
+                    <p class="text-gray-600 leading-relaxed">${project.description}</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Research Objectives</h4>
+                        <ul class="space-y-2">
+                            ${project.objectives.map(obj => `<li class="flex items-start"><span class="text-blue-600 mr-2">•</span><span class="text-gray-600">${obj}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="text-lg font-semibold text-gray-900 mb-3">Key Achievements</h4>
+                        <ul class="space-y-2">
+                            ${project.achievements.map(achievement => `<li class="flex items-start"><span class="text-emerald-600 mr-2">✓</span><span class="text-gray-600">${achievement}</span></li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Expected Impact</h4>
+                    <p class="text-gray-600 leading-relaxed">${project.impact}</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-gray-50 p-4 rounded-lg">
+                    <div>
+                        <h5 class="font-semibold text-gray-900 mb-1">Team Size</h5>
+                        <p class="text-sm text-gray-600">${project.team}</p>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold text-gray-900 mb-1">Duration</h5>
+                        <p class="text-sm text-gray-600">${project.duration}</p>
+                    </div>
+                    <div>
+                        <h5 class="font-semibold text-gray-900 mb-1">Funding</h5>
+                        <p class="text-sm text-gray-600">${project.funding}</p>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const modal = document.getElementById('project-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeProjectModal();
+            }
         });
     </script>
 </body>
