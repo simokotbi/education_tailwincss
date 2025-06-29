@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Nexus Academy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
+        <nav class="flex items-center justify-between p-4 md:px-8 max-w-7xl mx-auto">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html" class="text-gray-900 font-extrabold text-2xl">Nexus Academy</a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Home</a>
+                <a href="academics.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Academics</a>
+                <a href="#" class="text-blue-600 hover:text-blue-700 font-medium transition duration-300">Admissions</a>
+                <a href="research.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Research</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">About</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="hidden md:block">
+                <a href="#application-form" class="px-6 py-3 rounded-full font-semibold bg-blue-600 text-white hover:bg-blue-700 transition duration-300">Apply Now</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="index.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Home</a>
+                <a href="academics.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Academics</a>
+                <a href="#" class="block px-3 py-2 text-blue-600 font-medium">Admissions</a>
+                <a href="research.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Research</a>
+                <a href="about.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">About</a>
+                <a href="contact.html" class="block px-3 py-2 text-gray-700 hover:text-blue-600 transition duration-300">Contact</a>
+                <a href="#application-form" class="block mx-3 mt-4 px-6 py-3 rounded-full font-semibold bg-blue-600 text-white text-center">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-24 pb-16 bg-gradient-to-br from-emerald-900 via-blue-800 to-purple-800 text-white overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div class="relative z-10 max-w-6xl mx-auto px-4 py-16">
+            <div class="text-center" data-aos="fade-up">
+                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">Join Our Community</h1>
+                <p class="text-xl md:text-2xl font-light max-w-3xl mx-auto">
+                    Begin your journey toward academic excellence and personal transformation at Nexus Academy.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="py-12 md:py-16 max-w-6xl mx-auto px-4">
+        
+        <!-- Admission Process -->
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Admission Process</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Submit Application</h3>
+                    <p class="text-gray-600 text-sm">Complete our comprehensive online application with personal and academic information.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-emerald-600">2</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Submit Documents</h3>
+                    <p class="text-gray-600 text-sm">Provide transcripts, test scores, essays, and letters of recommendation.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Interview</h3>
+                    <p class="text-gray-600 text-sm">Participate in a personal interview with our admissions committee.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-orange-600">4</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Decision</h3>
+                    <p class="text-gray-600 text-sm">Receive your admission decision and begin planning your academic journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Admission Requirements</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Undergraduate Requirements</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>High school diploma or equivalent</li>
+                        <li>Minimum GPA of 3.5 (on 4.0 scale)</li>
+                        <li>SAT (1350+) or ACT (30+) scores</li>
+                        <li>Two letters of recommendation</li>
+                        <li>Personal statement essay</li>
+                        <li>Official transcripts</li>
+                        <li>English proficiency test (for international students)</li>
+                        <li>Portfolio or additional materials (program-specific)</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-6">Graduate Requirements</h3>
+                    <ul class="list-disc list-inside space-y-3 text-lg text-gray-700">
+                        <li>Bachelor's degree from accredited institution</li>
+                        <li>Minimum undergraduate GPA of 3.3</li>
+                        <li>GRE/GMAT scores (program-dependent)</li>
+                        <li>Three letters of recommendation</li>
+                        <li>Statement of purpose</li>
+                        <li>Professional resume/CV</li>
+                        <li>Official transcripts from all institutions</li>
+                        <li>Work experience (for certain programs)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Dates -->
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Important Dates</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Fall 2025 Admission</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="text-gray-700">Early Decision Deadline</span>
+                                <span class="font-semibold text-blue-600">November 15, 2024</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="text-gray-700">Regular Decision Deadline</span>
+                                <span class="font-semibold text-blue-600">January 15, 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="text-gray-700">Decision Notification</span>
+                                <span class="font-semibold text-emerald-600">March 30, 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Enrollment Deadline</span>
+                                <span class="font-semibold text-emerald-600">May 1, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-4">Spring 2026 Admission</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="text-gray-700">Application Deadline</span>
+                                <span class="font-semibold text-blue-600">October 1, 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center border-b border-gray-200 pb-2">
+                                <span class="text-gray-700">Decision Notification</span>
+                                <span class="font-semibold text-emerald-600">November 15, 2025</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-gray-700">Enrollment Deadline</span>
+                                <span class="font-semibold text-emerald-600">December 15, 2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Aid -->
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Financial Aid & Scholarships</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Merit Scholarships</h3>
+                    <p class="text-gray-600 text-sm mb-4">Awards based on academic achievement, leadership, and exceptional talent.</p>
+                    <div class="text-2xl font-bold text-blue-600">Up to $30,000</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-emerald-50 to-emerald-100 p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Need-Based Aid</h3>
+                    <p class="text-gray-600 text-sm mb-4">Financial assistance based on demonstrated financial need and family circumstances.</p>
+                    <div class="text-2xl font-bold text-emerald-600">Up to 100%</div>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                    <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m8 0H8m8 0v6m-8-6v6m0 0v4a2 2 0 002 2h4a2 2 0 002-2v-4m-6 0h6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Work-Study Programs</h3>
+                    <p class="text-gray-600 text-sm mb-4">Part-time employment opportunities on campus to help offset educational costs.</p>
+                    <div class="text-2xl font-bold text-purple-600">$8,000/year</div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white p-8 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Financial Aid Fast Facts</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                            <li>85% of students receive some form of financial aid</li>
+                            <li>Average aid package: $28,500</li>
+                            <li>FAFSA deadline: February 1st</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+                            <li>CSS Profile required for institutional aid</li>
+                            <li>International students eligible for merit scholarships</li>
+                            <li>Payment plans available</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Application Form -->
+        <section id="application-form" class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Start Your Application</h2>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-900 mb-2">First Name</label>
+                            <input type="text" id="firstName" name="firstName" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-900 mb-2">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-900 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-900 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="program" class="block text-sm font-medium text-gray-900 mb-2">Program of Interest</label>
+                            <select id="program" name="program" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                <option value="">Select a program</option>
+                                <option value="undergraduate">Undergraduate</option>
+                                <option value="graduate">Graduate</option>
+                                <option value="phd">PhD</option>
+                                <option value="executive">Executive Education</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="startTerm" class="block text-sm font-medium text-gray-900 mb-2">Intended Start Term</label>
+                            <select id="startTerm" name="startTerm" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                <option value="">Select term</option>
+                                <option value="fall2025">Fall 2025</option>
+                                <option value="spring2026">Spring 2026</option>
+                                <option value="fall2026">Fall 2026</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-900 mb-2">Why Nexus Academy?</label>
+                        <textarea id="message" name="message" rows="4" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your interests and goals..."></textarea>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                        <label for="newsletter" class="ml-2 block text-sm text-gray-900">
+                            I would like to receive updates about Nexus Academy programs and events
+                        </label>
+                    </div>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button type="submit" class="px-8 py-3 bg-blue-600 text-white rounded-full font-semibold hover:bg-blue-700 transition duration-300">
+                            Submit Application
+                        </button>
+                        <button type="button" class="px-8 py-3 border-2 border-gray-300 text-gray-700 rounded-full font-semibold hover:border-gray-400 transition duration-300">
+                            Save as Draft
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="mb-16" data-aos="fade-up">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-8 md:mb-12">Frequently Asked Questions</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What is the application fee?</h3>
+                    <p class="text-gray-600">The application fee is $75 for domestic students and $100 for international students. Fee waivers are available for qualifying applicants.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Do you accept transfer students?</h3>
+                    <p class="text-gray-600">Yes, we welcome transfer students. You can transfer up to 90 credit hours toward your degree, depending on the program and course equivalency.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">What English proficiency scores do you accept?</h3>
+                    <p class="text-gray-600">We accept TOEFL (minimum 100), IELTS (minimum 7.0), or Duolingo English Test (minimum 120) for international students whose first language is not English.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Can I defer my admission?</h3>
+                    <p class="text-gray-600">Yes, admitted students may request to defer their enrollment for up to one year. A written request must be submitted by the enrollment deadline.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 p-8 md:p-12 mt-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white font-extrabold text-xl mb-4">Nexus Academy</h3>
+                    <p class="text-gray-400 leading-relaxed">Pioneering the future of education through innovation, research, and global collaboration.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Academics</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">Undergraduate</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Graduate</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Online Programs</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Executive Education</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Research</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">Research Centers</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Publications</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Collaborations</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Innovation Labs</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition duration-300">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Campus Visits</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Alumni Network</a></li>
+                        <li><a href="#" class="hover:text-white transition duration-300">Media Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2025 Nexus Academy. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
